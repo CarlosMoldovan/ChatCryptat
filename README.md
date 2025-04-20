@@ -1,3 +1,5 @@
+CHAT CRYPTAT
+
 Acest proiect este un chat scris în Python care permite comunicare în timp real între utilizatori, cu criptare AES aplicată pe mesajele trimise. Proiectul vine cu o interfață grafică (Tkinter), unde utilizatorii pot selecta între chat de grup sau privat și pot trimite mesaje în siguranță.
 
 Scopul proiectului
@@ -35,31 +37,13 @@ Chat privat
 Comunicare individuală între doi utilizatori, cu selecție din listă:
 <img width="400" alt="login" src="4.jpg" />
 
-Cum se folosește
-Setup
-Asigură-te că ai Python 3 instalat. Instalează biblioteca necesară:
+Pentru a utiliza aplicația, asigură-te mai întâi că ai instalat Python 3 pe sistemul tău. După aceea, este necesar să instalezi biblioteca PyCryptodome, care se ocupă de criptarea mesajelor. Aceasta poate fi adăugată cu ușurință folosind pip, managerul de pachete Python.
 
-bash
-Copiază
-Editează
-pip install pycryptodome
-Rulează serverul
-Deschide un terminal și pornește serverul:
+Odată ce biblioteca este instalată, aplicația poate fi pornită. Serverul trebuie lansat primul, prin rularea fișierului server.py. Acesta va asculta conexiunile venite de la utilizatori pe portul prestabilit.
 
-bash
-Copiază
-Editează
-python server.py
-Rulează clientul
-Pe fiecare client, rulează:
+Pe fiecare dispozitiv client de pe care dorești să te conectezi, pornește aplicația rulând fișierul user.py. La conectare, utilizatorul va introduce un nume și parola definită în codul serverului. Dacă parola este corectă, va avea acces la funcționalitate.
 
-bash
-Copiază
-Editează
-python user.py
-Autentificare și folosire
-Introdu un nume de utilizator și parola corectă (parola este definită în server.py). După autentificare, alege tipul de chat dorit și începe să comunici.
-
+După autentificare, utilizatorul poate alege între două moduri de comunicare: fie intră într-un chat de grup unde vede mesajele tuturor, fie selectează un alt utilizator pentru a începe un chat privat. Comunicarea se desfășoară printr-o interfață grafică simplă și intuitivă, iar mesajele sunt criptate automat pentru a proteja conținutul transmis.
 Librării folosite
 socket – pentru conexiuni rețea
 threading – pentru execuție paralelă
@@ -68,7 +52,8 @@ Crypto.Cipher (AES) – pentru criptare și decriptare
 hashlib – pentru hashingul parolei
 pickle – pentru serializarea datelor
 
-Surse și inspirație
-https://docs.python.org/3/library/socket.html
-https://docs.python.org/3/library/tkinter.html
-https://youtu.be/GYCVmMCRmTM?si=7N5uViP4ksaLexpG
+## Surse și inspirație
+
+- https://docs.python.org/3/library/socket.html  
+- https://docs.python.org/3/library/tkinter.html  
+- https://youtu.be/GYCVmMCRmTM?si=7N5uViP4ksaLexpG

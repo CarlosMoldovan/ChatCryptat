@@ -34,19 +34,19 @@ Folosește threading pentru a primi și afișa mesajele fără a bloca interfaț
 
 Interfață și Funcționalitate
 Login simplu
-<img width="400" alt="login" src="https://github.com/user-attachments/assets/your-image-id-1" />
+<img width="400" alt="login" src="1.jpg" />
 Autentificare cu username și parolă.
 
 Selectare mod de comunicare
-<img width="400" alt="selectare chat" src="https://github.com/user-attachments/assets/your-image-id-2" />
+<img width="400" alt="selectare chat" src="2.jpg" />
 Alegere între chat de grup sau privat.
 
 Chat de grup
-<img width="400" alt="chat grup" src="https://github.com/user-attachments/assets/your-image-id-3" />
+<img width="400" alt="chat grup" src="3.jpg" />
 Toți utilizatorii conectati pot comunica într-un singur spațiu.
 
 Chat privat
-<img width="400" alt="chat privat" src="https://github.com/user-attachments/assets/your-image-id-4" />
+<img width="400" alt="chat privat" src="4.jpg" />
 Comunicare individuală între doi utilizatori, cu selecție din listă.
 
 Cum se folosește
@@ -85,7 +85,4 @@ pickle – pentru serializarea datelor
 Surse și inspirație
 https://docs.python.org/3/library/socket.html
 https://docs.python.org/3/library/tkinter.html
-https://pycryptodome.readthedocs.io/en/latest/
-https://www.youtube.com/watch?v=Lbfe3-v7yE0
-https://www.geeksforgeeks.org/socket-programming-python/
-https://www.youtube.com/watch?v=JeznW_7DlB0
+https://youtu.be/GYCVmMCRmTM?si=7N5uViP4ksaLexpG

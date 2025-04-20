@@ -1,61 +1,91 @@
-Acesta este un honeypot scris in Python, care simuleaza un server SSH si salveaza date despre incercarile de conectare. Proiectul vine cu o interfata grafica (Tkinter), unde poti vedea loguri live si statistici despre conexiuni.
+Acesta este un chat scris în Python care permite comunicare în timp real între utilizatori, cu criptare AES aplicată pe mesajele trimise. Proiectul vine cu o interfață grafică (Tkinter), unde utilizatorii pot selecta între chat de grup sau privat și pot trimite mesaje în siguranță.
 
 Scopul proiectului
+Scopul acestui proiect este să:
 
-Scopul acestui proiect este sa:
+Permită comunicarea criptată între mai mulți utilizatori.
 
-Simuleze un server SSH vulnerabil pentru a atrage potentiali atacatori.
-Inregistreze toate incercarile de autentificare (nume de utilizator + parola).
-Ofera o interfata prietenoasa pentru vizualizarea activitatii in timp real.
-Analizeze si afiseze statistici relevante pentru studii de securitate si testare.
-Este o unealta educationala si de analiza, NU un sistem de securitate pentru productie.
+Simuleze atât chat de grup, cât și comunicare directă între doi clienți.
 
-Ce face aplicatia
+Protejeze datele transmise prin criptare AES.
 
-Porneste un server pe portul 2222 care accepta conexiuni SSH.
-Nu permite autentificarea, dar salveaza userul si parola folosita.
-Pastreaza logurile si le afiseaza in interfata grafica.
-Salveaza toate datele (nume, parola, ip, data si ora) intr-un fisier CSV.
-Ofera o pagina separata cu statistici: conexiuni, IP-uri unice si parole frecvente.
-Interfata si Functionalitate
+Oferă o interfață grafică intuitivă, ușor de utilizat.
 
-Loguri in timp real
-<img width="1165" alt="Screenshot 2025-04-09 at 18 50 49" src="https://github.com/user-attachments/assets/4664363f-9cbe-45c5-a5da-f574e2fb484c" />
-Vezi toate incercarile de conectare in timp real.
-Butoane pentru pornirea si oprirea serverului.
-Comutare rapida intre loguri si statistici.
-Statistici in timp real
-<img width="694" alt="Screenshot 2025-04-09 at 18 50 21" src="https://github.com/user-attachments/assets/fe497bd8-155b-4e8d-a127-95febb1cfd60" />
-Numar total de conexiuni primite.
-Numar de IP-uri unice care au incercat sa se conecteze.
-Top 5 parole cel mai des incercate.
-Cum se foloseste
+Servească drept unealtă educațională pentru înțelegerea criptării simetrice, a conexiunilor rețea și a interfețelor grafice în Python.
 
-1. Setup
-Asigura-te ca ai fisierul key (cheie privata RSA) in acelasi folder cu scriptul.
-Poti genera o cheie cu:
-ssh-keygen -t rsa -b 2048 -f key
-2. Ruleaza scriptul
-python honeypot.py
-3. Foloseste interfata
-Apasa pe "porneste server" pentru a incepe.
-Vezi in timp real cine incearca sa se conecteze.
-Acceseaza pagina "vezi statistici" pentru raportul in timp real.
-4. Datele sunt salvate automat
-Toate incercarile de conectare sunt salvate in utilizatori.csv.
-Librarii folosite
+Este o aplicație demonstrativă, cu scop educațional, NU o soluție de comunicație sigură pentru uz real.
 
-paramiko – pentru simularea serverului SSH.
-socket si threading – pentru conexiuni multiple.
-tkinter – pentru interfata grafica.
-csv si datetime – pentru salvarea datelor.
-Surse si inspiratie
+Ce face aplicația
+Pornește un server care acceptă conexiuni multiple de la clienți pe portul 1540.
 
-Am folosit urmatoarele linkuri pentru inspiratie si intelegere:
+Cere autentificare printr-o parolă unică definită pe server.
 
-https://docs.paramiko.org/
-https://realpython.com/python-sockets/
+Oferă clientului două opțiuni după autentificare:
+
+Chat de grup – unde toți utilizatorii pot comunica.
+
+Chat privat – selectezi un alt utilizator și discuți doar cu el.
+
+Criptează toate mesajele cu AES și le decriptează pe server.
+
+Afișează mesajele primite în timp real în interfața clientului.
+
+Folosește threading pentru a primi și afișa mesajele fără a bloca interfața.
+
+Interfață și Funcționalitate
+Login simplu
+<img width="400" alt="login" src="https://github.com/user-attachments/assets/your-image-id-1" />
+Autentificare cu username și parolă.
+
+Selectare mod de comunicare
+<img width="400" alt="selectare chat" src="https://github.com/user-attachments/assets/your-image-id-2" />
+Alegere între chat de grup sau privat.
+
+Chat de grup
+<img width="400" alt="chat grup" src="https://github.com/user-attachments/assets/your-image-id-3" />
+Toți utilizatorii conectati pot comunica într-un singur spațiu.
+
+Chat privat
+<img width="400" alt="chat privat" src="https://github.com/user-attachments/assets/your-image-id-4" />
+Comunicare individuală între doi utilizatori, cu selecție din listă.
+
+Cum se folosește
+Setup
+Asigură-te că ai Python 3 instalat. Instalează biblioteca necesară:
+
+bash
+Copiază
+Editează
+pip install pycryptodome
+Rulează serverul
+Deschide un terminal și pornește serverul:
+
+bash
+Copiază
+Editează
+python server.py
+Rulează clientul
+Pe fiecare client, rulează:
+
+bash
+Copiază
+Editează
+python user.py
+Autentificare și folosire
+Introdu un nume de utilizator și parola corectă (parola este definită în server.py). După autentificare, alege tipul de chat dorit și începe să comunici.
+
+Librării folosite
+socket – pentru conexiuni rețea
+threading – pentru execuție paralelă
+tkinter – pentru interfața grafică
+Crypto.Cipher (AES) – pentru criptare și decriptare
+hashlib – pentru hashingul parolei
+pickle – pentru serializarea datelor
+
+Surse și inspirație
 https://docs.python.org/3/library/socket.html
-https://www.youtube.com/watch?v=gDjDxS55890&t=27s&pp=ygUWY3JlYXRlIGhvbmV5cG90IHB5dGhvbg%3D%3D
-https://www.youtube.com/watch?v=HO1h57CiF98&pp=ygUWY3JlYXRlIGhvbmV5cG90IHB5dGhvbg%3D%3D
-https://docs.python.org/3/library
+https://docs.python.org/3/library/tkinter.html
+https://pycryptodome.readthedocs.io/en/latest/
+https://www.youtube.com/watch?v=Lbfe3-v7yE0
+https://www.geeksforgeeks.org/socket-programming-python/
+https://www.youtube.com/watch?v=JeznW_7DlB0
